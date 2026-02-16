@@ -11,21 +11,23 @@
     <div id="display">
 
     </div>
-    <button id="add">+</button>
-    <button id="subtract">-</button>
-    <button id="multiply">x</button>
-    <button id="divide">÷</button>
-    <button id="equals">=</button>
+    <button id="add" onclick="keyPress('clear')">clear</button>
+    <button id="add" onclick="keyPress('+')">+</button>
+    <button id="subtract" onclick="keyPress('-')">-</button>
+    <button id="multiply" onclick="keyPress('x')">x</button>
+    <button id="divide" onclick="keyPress('÷')">÷</button>
+    <button id="equals" onclick="keyPress('=')">=</button>
     <div id="numbers">
-        <button>1</button>
-        <button>2</button>
-        <button>3</button>
-        <button>4</button>
-        <button>5</button>
-        <button>6</button>
-        <button>7</button>
-        <button>8</button>
-        <button>9</button>
+        <button onclick="keyPress(0)">0</button>
+        <button onclick="keyPress(1)">1</button>
+        <button onclick="keyPress(2)">2</button>
+        <button onclick="keyPress(3)">3</button>
+        <button onclick="keyPress(4)">4</button>
+        <button onclick="keyPress(5)">5</button>
+        <button onclick="keyPress(6)">6</button>
+        <button onclick="keyPress(7)">7</button>
+        <button onclick="keyPress(8)">8</button>
+        <button onclick="keyPress(9)">9</button>
     </div>
 </body>
 </html>
