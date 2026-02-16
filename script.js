@@ -32,11 +32,15 @@ function keyPress(key) {
     if(typeof(key) === "number") {
         // If first number is not chosen
         if(operator === "") {
-            first += key;
+            if(+first === 0 && !first.includes('.')) first = ''+key;
+            else first += key;
             previous = '';
+            previousExp = '';
         }
-        else second += key;
-        previousExp = '';
+        else {
+            if(+second === 0 && !second.includes('.')) second = ''+key;
+            else second += key;
+        }
         displayInfo(first + operator + second);
         displayPreviousExp(previousExp);
     }
@@ -52,6 +56,7 @@ function keyPress(key) {
                 displayPreviousExp(previousExp);
             } catch (error) { // Divide by zero or not a number
                 displayInfo(error);
+                displayPreviousExp('');
                 first = operator = second = previous = previousExp = '';
             }
         }
@@ -80,6 +85,8 @@ function keyPress(key) {
     // ===================== Key pressed is '.' =====================
     else if(key === '.') {
         if(operator === '') {
+            previousExp = '';
+            displayPreviousExp('');
             if(!first.includes('.')) first += '.';
         }
         else {
@@ -114,13 +121,14 @@ function keyPress(key) {
         else if(first !== '' && second !== '') {
             try {
                 previousExp = first + operator + second;
-                displayPreviousExp(previousExp);
                 first = '' + operate(first, operator, second);
                 second = '';
                 operator = key;
                 displayInfo(first + operator + second);
+                displayPreviousExp(previousExp);
             } catch(error) { // Divide by zero or not a number
                 displayInfo(error);
+                displayPreviousExp('');
                 first = operator = second = previous = previousExp = '';
             }
         }
@@ -130,8 +138,6 @@ function keyPress(key) {
             operator = key;
             displayInfo(first + operator + second);
         }
-        previousExp = '';
-        displayPreviousExp('');
     }
 }
 
