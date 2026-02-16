@@ -6,6 +6,14 @@
     text-align: right;
 }
 
+#prevExpression {
+    border: 1px solid black;
+    width: 200px;
+    height: 25px;
+    margin-bottom: 5px;
+    text-align: right;
+}
+
 #numbers {
     margin-top: 5px;
 }

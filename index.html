@@ -8,17 +8,22 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
+    <div id="prevExpression">
+
+    </div>
     <div id="display">
 
     </div>
-    <button id="add" onclick="keyPress('clear')">clear</button>
-    <button id="add" onclick="keyPress('delete')">backspace</button>
+    <button id="clear" onclick="keyPress('clear')">clear</button>
+    <button id="delete" onclick="keyPress('delete')">backspace</button>
     <button id="add" onclick="keyPress('+')">+</button>
     <button id="subtract" onclick="keyPress('-')">-</button>
     <button id="multiply" onclick="keyPress('x')">x</button>
     <button id="divide" onclick="keyPress('÷')">÷</button>
     <button id="equals" onclick="keyPress('=')">=</button>
+    <button id="negate" onclick="keyPress('negate')">+/-</button>
     <div id="numbers">
+        <button onclick="keyPress('.')">.</button>
         <button onclick="keyPress(0)">0</button>
         <button onclick="keyPress(1)">1</button>
         <button onclick="keyPress(2)">2</button>
