@@ -3,22 +3,22 @@ let operator = "";
 let second = "";
 let previous = "";
 
-function operate(first, operator, second) {
-    if(operator === "+") {
-        const res = +first + +second;
+function operate(f, o, s) {
+    if(o === "+") {
+        const res = +f + +s;
         return Number(res.toFixed(5));
     }
-    else if(operator === "-") {
-        const res = +first - +second;
+    else if(o === "-") {
+        const res = +f - +s;
         return Number(res.toFixed(5));
     }
-    else if(operator === "x") {
-        const res = +first * +second;
+    else if(o === "x") {
+        const res = +f * +s;
         return Number(res.toFixed(5));
     }
-    else if(operator === "÷") {
-        if(second === '0') throw "Divide by zero";
-        const res = +first / +second;
+    else if(o === "÷") {
+        if(s === '0') throw "Divide by zero";
+        const res = +f / +s;
         return Number(res.toFixed(5));
     }
     else return "";
@@ -41,6 +41,7 @@ function keyPress(key) {
         if(first !== '' && operator !== '' && second !=='') {
             try {
                 previous = '' + operate(first, operator, second);
+                first = operator = second = '';
                 displayInfo(previous);
             } catch (error) { // Divide by zero
                 displayInfo(error);
