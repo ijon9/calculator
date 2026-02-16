@@ -25,7 +25,7 @@ function operate(first, operator, second) {
 }
 
 function keyPress(key) {
-    // Key pressed is a number
+    // ===================== Key pressed is a number =====================
     if(typeof(key) === "number") {
         // If first number is not chosen
         if(operator === "") {
@@ -35,7 +35,7 @@ function keyPress(key) {
         else second += key;
         displayInfo(first + operator + second);
     }
-    // Key pressed is equal
+    // ===================== Key pressed is equal =====================
     else if(key === "=") {
         // Only compute result if all slots are chosen
         if(first !== '' && operator !== '' && second !=='') {
@@ -48,12 +48,12 @@ function keyPress(key) {
             }
         }
     }
-    // Key pressed is clear
+    // ===================== Key pressed is clear =====================
     else if(key === "clear") {
         first = second = operator = previous = "";
         displayInfo('');
     }
-    // Key pressed is operator
+    // ===================== Key pressed is operator =====================
     else {
         // First has a number but second doesn't
         if(first !== '' && second === '') {
