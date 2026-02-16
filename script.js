@@ -54,6 +54,21 @@ function keyPress(key) {
         first = second = operator = previous = "";
         displayInfo('');
     }
+    // ===================== Key pressed is delete =====================
+    else if(key === "delete") {
+        if(second !== '') {
+            second = second.substring(0, second.length-1);
+            displayInfo(first + operator + second);
+        }
+        else if(operator !== '') {
+            operator = '';
+            displayInfo(first + operator + second);
+        }
+        else if(first !== '') {
+            first = first.substring(0, first.length-1);
+            displayInfo(first + operator + second);
+        }
+    }
     // ===================== Key pressed is operator =====================
     else {
         // First has a number but second doesn't
